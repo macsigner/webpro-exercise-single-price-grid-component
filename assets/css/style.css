@@ -130,6 +130,32 @@ body > main {
 }
 
 /**
+ * Small content.
+ */
+.small {
+    font-size: var(--font-size-90);
+}
+
+/**
+ * Button.
+ */
+:root {
+    --button-color: var(--color-white);
+    --button-bg-color: var(--color-primary-cta);
+}
+
+.button {
+    display: block;
+    padding: 1rem;
+    border-radius: .4rem;
+    text-decoration: none;
+    text-align: center;
+    color: var(--button-color);
+    background-color: var(--button-bg-color);
+    box-shadow: 0 4px 6px 6px rgba(0,0,0,.04), -1px 2px 4px 4px rgba(0,0,0,.06);
+}
+
+/**
  * Single price grid layout.
  */
 .layout-single-price-grid {
@@ -238,4 +264,8 @@ body > main {
 
 .tile-default__price-info {
     font-weight: 400;
+}
+
+.tile-default__button {
+    margin-top: 2.8rem;
 }
