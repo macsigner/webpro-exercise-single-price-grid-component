@@ -129,6 +129,9 @@ body > main {
     }
 }
 
+/**
+ * Single price grid layout.
+ */
 .layout-single-price-grid {
     overflow: hidden;
     display: grid;
@@ -146,6 +149,9 @@ body > main {
     grid-column: 1 / -1;
 }
 
+/**
+ * Default tile.
+ */
 :root {
     --tile-default-color: var(--color-neutral);
     --tile-default-bg-color: var(--color-white);
