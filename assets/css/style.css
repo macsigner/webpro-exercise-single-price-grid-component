@@ -19,7 +19,7 @@ html {
  */
 :root {
     --base-width-max-width: 120rem;
-    --base-width-side-margin: 2rem;
+    --base-width-side-margin: 3rem;
 
     /* colors */
     --color-black: #000;
@@ -37,6 +37,22 @@ html {
     --font-size-110: 1.8rem;
     --font-size-120: 2.2rem;
     --font-size-130: 2.6rem;
+    --font-size-140: 2.6rem;
+
+    /* settings */
+    --default-border-radius: 1.2rem;
+    --default-border-radius-small: .4rem;
+}
+
+@media (max-width: 679px) {
+    :root {
+        /* font-sizes */
+        --font-size-120: 1.8rem;
+        --font-size-130: 2rem;
+
+        /* settings */
+        --default-border-radius: .6rem;
+    }
 }
 
 /**
@@ -147,7 +163,7 @@ body > main {
 .button {
     display: block;
     padding: 1rem;
-    border-radius: .4rem;
+    border-radius: var(--default-border-radius-small);
     text-decoration: none;
     text-align: center;
     color: var(--button-color);
@@ -166,9 +182,15 @@ body > main {
     max-width: 100%;
     margin-right: auto;
     margin-left: auto;
-    border-radius: 1.2rem;
+    border-radius: var(--default-border-radius);
     background-color: var(--color-white);
     box-shadow: 0 10px 20px 10px rgba(0,0,0,.04), -1px 4px 8px 4px rgba(0,0,0,.03);
+}
+
+@media (max-width: 679px) {
+    .layout-single-price-grid {
+        display: block;
+    }
 }
 
 .layout-single-price-grid__header {
@@ -188,6 +210,15 @@ body > main {
     --tile-padding-right: 4rem;
     --tile-padding-bottom: 4rem;
     --tile-padding-left: 4rem;
+}
+
+@media (max-width: 679px) {
+    :root {
+        --tile-padding-top: 2.8rem;
+        --tile-padding-right: 2.4rem;
+        --tile-padding-bottom: 2.4rem;
+        --tile-padding-left: 2.4rem;
+    }
 }
 
 .tile-default {
@@ -241,13 +272,19 @@ body > main {
 
 .tile-default__price {
     margin-bottom: 1rem;
-    font-size: var(--font-size-130);
+    font-size: var(--font-size-140);
     font-weight: 700;
     line-height: 1;
 }
 
 .tile-default__teaser-text {
     font-weight: 400;
+}
+
+@media (max-width: 679px) {
+    .layout-single-price-grid .tile-default__teaser-text br {
+        display: none;
+    }
 }
 
 .tile-default__meta-info {
