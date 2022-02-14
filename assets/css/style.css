@@ -26,16 +26,17 @@ html {
     --color-white: #fff;
     --color-text: #000;
     --color-primary: hsl(179, 62%, 43%);
+    --color-primary-light: hsl(179, 63%, 45%);
     --color-primary-cta: hsl(71, 73%, 54%);
     --color-neutral: hsl(218, 22%, 67%);
     --color-neutral-light: hsl(204, 43%, 93%);
 
     /* font-sizes */
+    --font-size-90: 1.4rem;
     --font-size-100: 1.6rem;
     --font-size-110: 1.8rem;
-    --font-size-120: 2rem;
-    --font-size-130: 2.4rem;
-    --font-size-140: 2.8rem;
+    --font-size-120: 2.2rem;
+    --font-size-130: 2.6rem;
 }
 
 /**
@@ -84,6 +85,7 @@ li {
 
 body {
     font: 1.6rem/1.6 'Karla', sans-serif;
+    font-weight: 400;
     font-size: var(--font-size-100);
     background-color: var(--color-neutral-light);
 }
@@ -128,9 +130,10 @@ body > main {
 }
 
 .layout-single-price-grid {
+    overflow: hidden;
     display: grid;
     grid-template-columns: repeat(2, minmax(10px, 1fr));
-    width: 63.4rem;
+    width: 63.8rem;
     max-width: 100%;
     margin-right: auto;
     margin-left: auto;
@@ -141,4 +144,92 @@ body > main {
 
 .layout-single-price-grid__header {
     grid-column: 1 / -1;
+}
+
+:root {
+    --tile-default-color: var(--color-neutral);
+    --tile-default-bg-color: var(--color-white);
+    --tile-default-title-color: var(--color-primary-cta);
+    --tile-default-cta-color: var(--color-primary);
+    --tile-default-meta-color: var(--color-primary);
+    --tile-padding-top: 4rem;
+    --tile-padding-right: 4rem;
+    --tile-padding-bottom: 4rem;
+    --tile-padding-left: 4rem;
+}
+
+.tile-default {
+    padding: var(--tile-padding-top) var(--tile-padding-right) var(--tile-padding-bottom) var(--tile-padding-left);
+    color: var(--tile-default-color);
+    background-color: var(--tile-default-bg-color);
+}
+
+.tile-default--accent,
+.tile-default--accent-light {
+    --tile-default-title-color: var(--color-white);
+    --tile-default-color: var(--color-white);
+    --tile-default-meta-color: var(--color-neutral-light);
+}
+
+.tile-default--accent {
+    --tile-default-bg-color: var(--color-primary);
+}
+
+.tile-default--accent-light {
+    --tile-default-bg-color: var(--color-primary-light);
+}
+
+.tile-default > :first-child {
+    margin-top: 0;
+}
+
+.tile-default > :last-child {
+    margin-bottom: 0;
+}
+
+.tile-default__cta-title,
+.tile-default__title {
+    line-height: 1.2;
+    letter-spacing: .005em;
+}
+
+.tile-default__cta-title {
+    margin-bottom: 2.4rem;
+    font-size: var(--font-size-130);
+    font-weight: 700;
+    color: var(--tile-default-cta-color);
+}
+
+.tile-default__title {
+    margin-bottom: 1rem;
+    font-size: var(--font-size-110);
+    font-weight: 700;
+    color: var(--tile-default-title-color);
+}
+
+.tile-default__price {
+    margin-bottom: 1rem;
+    font-size: var(--font-size-130);
+    font-weight: 700;
+    line-height: 1;
+}
+
+.tile-default__teaser-text {
+    font-weight: 400;
+}
+
+.tile-default__meta-info {
+    font-size: var(--font-size-100);
+    font-weight: 400;
+    color: var(--tile-default-meta-color);
+}
+
+.tile-default__price .tile-default__meta-info {
+    display: inline-block;
+    margin-left: .6rem;
+    line-height: 1.2;
+}
+
+.tile-default__price-info {
+    font-weight: 400;
 }
