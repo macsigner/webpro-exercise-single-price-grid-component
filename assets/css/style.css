@@ -22,11 +22,13 @@ html {
     --base-width-side-margin: 2rem;
 
     /* colors */
+    --color-black: #000;
+    --color-white: #fff;
     --color-text: #000;
     --color-primary: hsl(179, 62%, 43%);
     --color-primary-cta: hsl(71, 73%, 54%);
+    --color-neutral: hsl(218, 22%, 67%);
     --color-neutral-light: hsl(204, 43%, 93%);
-    --color-neutral-: hsl(218, 22%, 67%);
 
     /* font-sizes */
     --font-size-100: 1.6rem;
@@ -83,6 +85,7 @@ li {
 body {
     font: 1.6rem/1.6 'Karla', sans-serif;
     font-size: var(--font-size-100);
+    background-color: var(--color-neutral-light);
 }
 
 /**
@@ -122,4 +125,20 @@ body > main {
         width: calc(100% - (2 * var(--base-width-side-margin)));
         max-width: var(--base-width-max-width);
     }
+}
+
+.layout-single-price-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(10px, 1fr));
+    width: 63.4rem;
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 1.2rem;
+    background-color: var(--color-white);
+    box-shadow: 0 10px 20px 10px rgba(0,0,0,.04), -1px 4px 8px 4px rgba(0,0,0,.03);
+}
+
+.layout-single-price-grid__header {
+    grid-column: 1 / -1;
 }
